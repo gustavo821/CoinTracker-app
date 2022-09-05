@@ -1,0 +1,166 @@
+@import '../../SASS/index.scss';
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        table-layout: fixed;
+
+        thead{
+            height: 50px;
+            border-bottom: 1px solid $color-blue-grey;
+            color: $color-blue-grey;
+            position: sticky;
+            top: 0;
+            background: $bg-body;
+            z-index: 100;
+            
+
+            th{
+                text-align: right;
+
+                &:nth-child(1){
+                    width: 30px!important;
+                }
+
+                &:nth-child(2){
+                    text-align: center;
+                    width: 30px!important;
+                }
+
+                &:nth-child(3){
+                    text-align: left;
+                    padding: 0 10px;
+                    width: 220px;
+                }
+
+                &:nth-child(4){
+                    width: 120px;
+                }
+
+                &:nth-child(5){
+                    width: 120px;
+                }
+
+                &:nth-child(6){
+                    width: 200px;
+                }
+
+                &:nth-child(7){
+                    width: 200px;
+                }
+
+                &:nth-child(8){
+                    width: 200px;
+                }
+
+                &:nth-child(9){
+                    width: 250px;
+                }
+
+                
+            }
+        }
+
+        tbody{
+            
+            tr{
+                border-bottom: 1px solid $color-blue-grey;
+                border-top: 1px solid $color-blue-grey;
+                height: 80px;
+                
+                &:hover{
+                    background: rgb(41, 39, 39);
+
+                    td{
+                        background: rgb(41, 39, 39)!important;
+                    }
+                }
+                
+                
+                td{
+                    text-align: right;
+
+                    &#colorBlue{
+                        color: $color-blue;
+                    }
+
+                    &:nth-child(1){
+                        cursor: pointer;
+                        text-align: center;
+                    }
+
+                    &:nth-child(2){
+                        text-align: center;
+                    }
+
+                    &:nth-child(3){
+                        text-align: left;
+                        cursor: pointer;
+
+                        div{
+                            @include flex-1(row,flex-start);
+                            gap: 5px;
+                            padding-left: 10px;
+
+                            span{
+                                color: $color-blue-grey;
+                            }
+                        }
+                    }
+
+                    &:nth-child(5){
+
+                        div{
+                            color: $color-green;
+                            @include flex-1(row,flex-end);
+
+                            span{
+                                margin-top: 5px;
+                            }
+
+                            &.down{
+                                color: $color-red;
+                            }
+                        }
+                    }
+
+                    &:last-child{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+
+@media screen and (max-width: 1026px) {
+    .market-section, .watchlist-section{
+        overflow-x: scroll;
+    }
+
+    th{
+        
+
+        &:nth-child(3){
+            width: 150px!important;
+            position: sticky;
+            left: 0;
+            background: $bg-body;
+            z-index: 1;
+
+           
+        }
+    }
+
+    td{
+
+        &:nth-child(3){
+            position: sticky;
+            left: 0;
+            background: $bg-body;
+            z-index: 1;
+
+        }
+    }
+}
