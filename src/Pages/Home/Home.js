@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './home.scss';
+import {AiFillStar} from 'react-icons/ai';
+
+// Componenets
 import Market from '../../Components/Market/Market';
 import Watchlist from '../../Components/WatchList/Watchlist';
 
@@ -22,7 +25,7 @@ const Home = () => {
                 className={wathList && "active"}
                 onClick={() => setWatchList(true)}
                 >
-                    Watchlist
+                    <span> <AiFillStar/> </span> Watchlist
                 </div>
             </div>
             

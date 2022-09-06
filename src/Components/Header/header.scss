@@ -31,7 +31,6 @@ header{
             
             color: $color-white;
             font-size: 18px;
-            margin-top: 5px;
             margin-left: 5px;
         }
 
@@ -54,7 +53,7 @@ header{
                 cursor: pointer;
 
                 &:hover{
-                    background-color: $color-black;
+                    background-color: $bg-body;
 
                 }
             }
@@ -87,8 +86,16 @@ header{
             margin-top: 0.8rem;
             padding: 0px 0.5rem;
             font-size: 35px;
-            opacity: 0.4;
+            color: $color-blue-grey;
           }
+      }
+
+      #search-mobile{
+        color: $color-white;
+        padding: 8px 15px;
+        font-size: 1.2rem;
+        display: none;
+        cursor: pointer;
       }
       
       
@@ -128,7 +135,16 @@ header{
     header{
         padding: 20px 3%;
     }
+
+    .nav-item{
+        gap: 5px!important;
+    }
+
     #search-bar{
         display: none;
+    }
+
+    #search-mobile{
+        display: block!important;
     }
 }

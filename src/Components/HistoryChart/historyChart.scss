@@ -1,0 +1,38 @@
+@import '../../SASS/index.scss';
+
+.chart-section{
+    margin-top: 100px;
+
+
+    .chart-menu{
+        margin-bottom: 25px;
+        @include flex-1(row,flex-start);
+        gap: 25px;
+        background-color: $bg-header;
+        color: $color-blue-grey;
+        padding: 3px;
+        width: max-content;
+
+        div{
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover, &.active{
+                background: $bg-body;
+            }
+        }
+    }
+
+    .chart{
+        height: 600px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    
+    .chart{
+        height: 300px!important;
+        color: rgb(55, 193, 111);
+    }
+}

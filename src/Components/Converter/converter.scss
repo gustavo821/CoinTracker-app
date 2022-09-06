@@ -1,0 +1,58 @@
+@import '../../SASS/index.scss';
+
+.converter-section{
+    margin: 50px 0;
+    width: 500px;
+    background: $bg-header;
+    padding: 25px;
+
+    #title{
+        font-size: 2rem;
+    }
+
+    #item_1, #item_2{
+        @include flex-1(row,flex-start);
+        margin-top: 10px;
+        background: $bg-body;
+        
+        padding: 0;
+
+        span{
+            flex-basis: 20%;
+            height: 60px;
+            @include flex-1(row,center);
+            text-align: center;
+            border-right: 1px solid $color-blue-grey;
+            margin: 0;
+        }
+
+        input{
+            height: 60px;
+            flex-basis: 80%;
+            background: $bg-body;
+            outline: none;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            font-size: 1rem;
+
+            &:focus{
+                border: 4px solid $color-blue;
+                border-radius: 0 10px 10px 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1026px) {
+    .converter-section{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .converter-section{
+        width: 100%;
+    }
+}

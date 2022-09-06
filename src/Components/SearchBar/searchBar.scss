@@ -1,0 +1,107 @@
+@import '../../SASS/index.scss';
+
+.search-content{
+    position: absolute;
+    top: 21px;
+    height: 400px;
+    width: 420px;
+    padding-bottom: 25px;
+    background: $bg-header;
+    z-index: 100;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    overflow-y: auto;
+
+   .search{
+    position: sticky;
+    top: 0;
+    display: flex;
+    @include flex-1(row,flex-start);
+    background: $bg-header;
+
+        .closeBtn{
+            cursor: pointer;
+            flex-basis: 10%;
+            color: $color-white;
+            text-align: right;
+            font-size: 2rem;
+        }
+   
+        .search-bar {
+            position: relative;
+            flex-basis: 90%;
+
+            #search-input {
+                width: 100%;
+                line-height: 2rem;
+                border-radius: 10px;
+                padding: 0.5rem 2.5rem;
+                font-size: 1rem;
+                background: $bg-header;
+                border: 2px solid $color-blue-grey;
+                outline: none;
+                color: $color-white;
+                
+                &::placeholder{
+                    color: $color-blue-grey;
+                }
+            }
+
+            #search-icon {
+                position: absolute;
+                left: 0;
+                bottom: 8px;
+                margin-top: 0.8rem;
+                padding: 0px 0.5rem;
+                font-size: 35px;
+                color: $color-blue-grey;
+            }
+        }
+    
+    }
+
+    #title{
+        margin: 20px;
+        color: $color-blue-grey;
+    }
+
+    .coin{
+        
+
+        div{
+            @include flex-1(row,space-between);
+            height: 40px;
+            padding: 0 10px;
+            cursor: pointer;
+
+            &:hover{
+                background: $color-blue-grey;
+            }
+
+            div{
+                @include flex-1(row,flex-start);
+                gap: 10px;
+
+                span{
+                    color: $color-blue-grey;
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width:1026px) {
+    .search-content{
+        width: 50vw;
+        
+    }
+}
+
+@media screen and (max-width:640px) {
+    .search-content{
+        top: 10vh;
+        left: 5vw;
+        width: 90vw;
+        
+    }
+}

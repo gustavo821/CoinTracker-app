@@ -13,7 +13,7 @@
             position: sticky;
             top: 0;
             background: $bg-body;
-            z-index: 100;
+            z-index: 1;
             
 
             th{
@@ -114,10 +114,6 @@
                         div{
                             color: $color-green;
                             @include flex-1(row,flex-end);
-
-                            span{
-                                margin-top: 5px;
-                            }
 
                             &.down{
                                 color: $color-red;

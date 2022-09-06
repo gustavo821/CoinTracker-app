@@ -1,0 +1,97 @@
+@import '../../SASS/index.scss';
+
+.coinDetail-section{
+    margin-top: 50px;
+    @include flex-1(row,flex-start);
+
+
+    .detail-item-1{
+        @include flex-2(column,flex-start);
+        flex-basis: 70%;
+        // background-color: red;
+
+        .item_1{
+            @include flex-1(row,flex-start);
+            gap: 15px;
+
+            div{
+                font-size: 3.2rem;
+            }
+
+            span{
+                background: $bg-header;
+                color: $color-blue-grey;
+                padding: 5px 8px;
+            }
+        }
+
+        .item_2{
+            color: $color-blue-grey;
+            margin: 15px 0;
+        }
+
+        .item_3{
+            @include flex-1(row,flex-start);
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+            #price{
+                font-size: 3rem
+            }
+
+            #change{
+                background: $color-green;
+                padding: 8px 15px;
+                border-radius: 5px;
+
+                span{
+                    padding: 0;
+                    background: none;
+                    color: white;
+                    
+                }
+            }
+
+            span{
+                background: $bg-header;
+                color: $color-blue-grey;
+                padding: 5px 8px;
+            }
+        }
+
+        .item_4{
+            @include flex-1(row,flex-start);
+            gap: 25px;
+
+            span{
+                color: $color-blue-grey;
+            }
+        }
+
+    }
+
+    .detail-item-2{
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        
+        div{
+            color: white;
+            margin-bottom: 10px;
+
+            &:nth-child(1){
+                color: $color-blue-grey;
+                // margin: 15px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1026px) {
+    .detail-item-2{
+        display: none!important;
+    }
+}

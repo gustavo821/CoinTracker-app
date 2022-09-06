@@ -1,35 +1,61 @@
 // Librairies
-import React from 'react';
+import React, { useState } from 'react';
 import './header.scss';
 import logo from '../../Asset/logo.png';
 import {FaChevronDown} from 'react-icons/fa';
 import {GoSearch} from 'react-icons/go';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Header = () => {
+    const [searchBar, setSearchBar] = useState(false);
+    const [displayCurrency, setDisplayCurrency] = useState("");
+    
+
+    const displayedSearchBar = () => {
+        setSearchBar(!searchBar);
+    }
+
+    const displayedCurrency = () => {
+        if(displayCurrency == ""){
+            setDisplayCurrency("active");
+        } else {
+            setDisplayCurrency("");
+        }
+    }
+
     return (
         <header>
             <nav>
                 <a href="#" id='nav-brand'><img src={logo} alt="logo" width="50px"/> CoinMarketCap</a>
 
                 <div className='nav-item'>
+
+                    <div id='search-mobile' onClick={displayedSearchBar}>
+                        <GoSearch id="search-icon"/>
+                    </div>      
+
                     <div className='currency'>
                         
-                        <div>
+                        <div onClick={displayedCurrency}>
                             USD 
                             <span> <FaChevronDown/> </span>
                         </div>
 
-                        <ul>
+                        <ul className={displayCurrency}>
                             <li>USD</li>
                             <li>EUR</li>
                         </ul>
                     </div>
 
-                    <div id="search-bar">
+                    <div id="search-bar" onClick={displayedSearchBar}>
                         <GoSearch id="search-icon"/>
-                        <input type="text" id="search-input" placeholder='Type for exemple "Bitcoin" '/>
+                        <input type="text" id="search-input" placeholder='Search... '/>
                         
                     </div>
+
+                    {
+                        searchBar && <SearchBar displayedSearchBar={displayedSearchBar}/>
+                    }
                 </div>
             </nav>
 
