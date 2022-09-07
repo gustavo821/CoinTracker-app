@@ -39,23 +39,28 @@
                 }
 
                 &:nth-child(5){
-                    width: 120px;
+                    width: 90px;
                 }
 
                 &:nth-child(6){
-                    width: 200px;
+                    width: 90px;
                 }
 
                 &:nth-child(7){
-                    width: 200px;
+                    width: 90px;
                 }
 
                 &:nth-child(8){
-                    width: 200px;
+                    width: 180px;
                 }
 
                 &:nth-child(9){
-                    width: 250px;
+                    width: 180px;
+                }
+
+                &:nth-child(10){
+                    width: 200px;
+                    padding-right: 10px;
                 }
 
                 
@@ -103,26 +108,31 @@
                             gap: 5px;
                             padding-left: 10px;
 
+                            a{
+
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
+
                             span{
                                 color: $color-blue-grey;
                             }
                         }
                     }
 
-                    &:nth-child(5){
 
-                        div{
-                            color: $color-green;
-                            @include flex-1(row,flex-end);
+                    .price-change{
+                        color: $color-green;
+                        @include flex-1(row,flex-end);
 
-                            &.down{
-                                color: $color-red;
-                            }
+                        &.down{
+                            color: $color-red;
                         }
                     }
 
                     &:last-child{
-                        cursor: pointer;
+                        padding-right: 10px;
                     }
                 }
             }
@@ -139,7 +149,9 @@
         
 
         &:nth-child(3){
-            width: 150px!important;
+            border-bottom: 1px solid $color-blue-grey;
+            border-top: 1px solid $color-blue-grey;
+            width: 45vw!important;
             position: sticky;
             left: 0;
             background: $bg-body;
@@ -147,16 +159,23 @@
 
            
         }
+
+        &:nth-child(8), &:nth-child(9){
+            width: 150px!important;
+        }
     }
 
     td{
 
         &:nth-child(3){
+            border-bottom: 1px solid $color-blue-grey;
+            border-top: 1px solid $color-blue-grey;
             position: sticky;
             left: 0;
             background: $bg-body;
             z-index: 1;
 
         }
+
     }
 }

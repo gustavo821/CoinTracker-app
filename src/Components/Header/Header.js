@@ -5,10 +5,16 @@ import logo from '../../Asset/logo.png';
 import {FaChevronDown} from 'react-icons/fa';
 import {GoSearch} from 'react-icons/go';
 import SearchBar from '../SearchBar/SearchBar';
+import useAxios from '../../hooks/useAxios';
+import { separator } from '../../Utils/utils';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [searchBar, setSearchBar] = useState(false);
     const [displayCurrency, setDisplayCurrency] = useState("");
+
+    const { response, loading } = useAxios('global');
+    // console.log(response);
     
 
     const displayedSearchBar = () => {
@@ -26,7 +32,7 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <a href="#" id='nav-brand'><img src={logo} alt="logo" width="50px"/> CoinMarketCap</a>
+                <Link to="/" id='nav-brand'><img src={logo} alt="logo" width="50px"/> CoinMarketCap</Link>
 
                 <div className='nav-item'>
 
@@ -60,11 +66,11 @@ const Header = () => {
             </nav>
 
             <div className='stats'>
-                <div>Cryptocurrencies: <span>1601</span> </div>
-                <div>Market: <span>11344</span></div>
-                <div>Market Cap: <span>$1 288 666 875 380</span></div>
-                <div>24h Vol: <span>$288 666 875 380</span></div>
-                <div>Btc Dominance: <span>40.2%</span></div>
+                <div>Cryptocurrencies: <span>{response && response.data.active_cryptocurrencies}</span> </div>
+                <div>Market: <span>{response && response.data.markets}</span></div>
+                <div>Market Cap: <span>${response && separator(response.data.total_market_cap.usd)}</span></div>
+                <div>24h Vol: <span>${response && separator(response.data.total_volume.usd)}</span></div>
+                <div>Btc Dominance: <span>{response && response.data.market_cap_percentage.btc.toFixed(2)}%</span></div>
             </div>
         </header>
     );

@@ -1,52 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './coinDetail.scss';
 import {AiOutlineStar} from 'react-icons/ai';
 import {AiFillStar} from 'react-icons/ai';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
 import bitcoin from '../../images/Bitcoin.png';
+import useAxios from '../../hooks/useAxios';
+import { reduceString, separator } from '../../Utils/utils';
 
-const CoinDetail = () => {
 
+const CoinDetail = ({response}) => {
+   
 
     return (
+        !response ? (
+            <div>Chargement</div>
+        )
+        :
+        (
         <div className='coinDetail-section'>
             <div className='detail-item-1'>
                 <div className='item_1'>
-                    <img src={bitcoin} alt="coinLogo" width="50px"/>
-                    <div>Bitcoin</div>
-                    <span>BTC</span>
+                    <img src={response.image.large} alt="coinLogo" width="50px"/>
+                    <div>{response.name}</div>
+                    <span style={{textTransform: "uppercase"}}>{response.symbol}</span>
                 </div>
 
-                <div className='item_2'>Rank #1</div>
+                <div className='item_2'>Rank #{response.market_cap_rank}</div>
 
                 <div className='item_3'>
-                    <div id='price'>$19,774.16</div>
-                    <div id='change'> <span> <AiFillCaretUp/> </span> 0.13%</div>
+                    <div id='price'>${response.market_data.current_price.usd}</div>
+                    <div className={response.market_data.market_cap_change_percentage_24h_in_currency.usd < 0 ? 'change down' : 'change'}> 
+                    <span> {response.market_data.market_cap_change_percentage_24h_in_currency.usd < 0 ? <AiFillCaretDown/> : <AiFillCaretUp/> } </span> 
+                    {reduceString(response.market_data.market_cap_change_percentage_24h_in_currency.usd)}%
+                    </div>
                     <span>24h</span>
                 </div>
 
                 <div className='item_4'>
-                    <div><span>Low:</span>$19,730.73</div>
-                    <div><span>High:</span>$19,749.6</div>
+                    <div><span>Low:</span>${response.market_data.high_24h.usd}</div>
+                    <div><span>High:</span>${response.market_data.low_24h.usd}</div>
                 </div>
             </div>
 
             <div className='detail-item-2'>
                 <div>
                     <div>Trading Volume 24h</div>
-                    <div>$39,081,692,592,558,660,000</div>
+                    <div>${separator(response.market_data.total_volume.usd)}</div>
                 </div>
                 <div>
                     <div>Market Cap</div>
-                    <div>$51,803,442,173.92</div>
+                    <div>${separator(response.market_data.market_cap.usd)}</div>
                 </div>
                 <div>
                     <div>Circulating Supply</div>
-                    <div>17 182 725 BTC	</div>
+                    <div>{separator(response.market_data.total_supply)} <span style={{textTransform: "uppercase"}}>{response.symbol}</span>	</div>
                 </div>
             </div>
         </div>
+        )
+        
     );
 };
 
