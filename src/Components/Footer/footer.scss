@@ -1,0 +1,58 @@
+@import '../../SASS/index.scss';
+
+footer{
+    // background: $color-black;
+    border-top: 1px solid $color-blue-grey;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+    padding: 40px 0;
+    padding-right: 50px;
+
+    #footer-item-1{
+       a{
+        @include flex-1(row,flex-start);
+        font-size: 25px;
+        font-weight: bold;
+       }
+    }
+
+    #footer-item-2{
+        flex-basis: 50%;
+        @include flex-1(row,space-between);
+    }
+
+
+
+    #item{
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+    a{
+        display: block;
+        margin-bottom: 10px;
+        
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    footer{
+        margin: 0 3%;
+        display: block;
+        padding: 40px 10px;
+
+        #footer-item-1{
+            margin-bottom: 15px;
+        }
+
+        #footer-item-2{
+            padding-left: 10px;
+        }
+    }
+}

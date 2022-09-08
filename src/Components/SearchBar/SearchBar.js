@@ -2,15 +2,40 @@ import React, { useEffect, useRef, useState } from 'react';
 import './searchBar.scss';
 import {GoSearch} from 'react-icons/go';
 import {AiFillCloseCircle} from 'react-icons/ai';
-import {AiFillFire} from 'react-icons/ai';
-import bitcoin from '../../images/Bitcoin.png';
 import TrendingCoin from '../TrendingCoin/TrendingCoin';
+import useAxios from '../../hooks/useAxios';
+import { Link } from 'react-router-dom';
+
 
 
 
 const SearchBar = ({displayedSearchBar}) => {
     const [trending,setTrending] = useState(true);
     const [input,setInput] = useState("");
+
+    const { response, loading } = useAxios(`search?query=${input}`);
+    // console.log(response);
+    
+
+    const [searchData,setSearchData] = useState([]);
+    const [filteredData,setFilteredData] = useState([]);
+    // console.log(searchData);
+
+    useEffect(() => {
+        if(response){
+            setSearchData(response.coins);
+        }
+    },[response]);
+
+    useEffect(() => {
+        const newArray = searchData && searchData.filter(item => 
+            item.name.toLowerCase().includes(input) || 
+            item.symbol.toLowerCase().includes(input) || 
+            item.id.toLowerCase().includes(input)
+            ) 
+            setFilteredData(newArray);
+    },[searchData,input])
+    
     
     useEffect(() => {
         if (input != "") {
@@ -38,7 +63,7 @@ const SearchBar = ({displayedSearchBar}) => {
             </div>
 
             { trending ? (
-                <TrendingCoin/>
+                <TrendingCoin />
             )
             :
             (
@@ -47,113 +72,26 @@ const SearchBar = ({displayedSearchBar}) => {
 
                 <div className='coin'>
 
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Ethereum Classic</div>
-                            <span>ETC</span>
-                        </div>
+                {filteredData && filteredData.map(item => {
+                    return(
+                        <Link to={`detail/${item.id}`}>
+                            <div key={item.id}>
+                                <div>
+                                    <img src={item.large} alt="logo" width="20px"/>
+                                    <div>{item.name}</div>
+                                    <span>{item.symbol}</span>
+                                </div>
 
-                        <div>
-                            #17
-                        </div>
-                    </div>
+                                <div>
+                                    #{item.market_cap_rank}
+                                </div>
+                            </div>
+                        </Link>
+                    )
+                 })
+                } 
 
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Ethereum</div>
-                            <span>ETH</span>
-                        </div>
-
-                        <div>
-                            #2
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Bitcoin</div>
-                            <span>BTC</span>
-                        </div>
-
-                        <div>
-                            #1
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Solana</div>
-                            <span>SOL</span>
-                        </div>
-
-                        <div>
-                            #9
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Cardano</div>
-                            <span>ADA</span>
-                        </div>
-
-                        <div>
-                            #9
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>GMX</div>
-                            <span>GMX</span>
-                        </div>
-
-                        <div>
-                            #110
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Elrond</div>
-                            <span>EGLD</span>
-                        </div>
-
-                        <div>
-                            #50
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Elrond</div>
-                            <span>EGLD</span>
-                        </div>
-
-                        <div>
-                            #50
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src={bitcoin} alt="logo" width="20px"/>
-                            <div>Elrond</div>
-                            <span>EGLD</span>
-                        </div>
-
-                        <div>
-                            #50
-                        </div>
-                    </div>
+                    
 
                 </div>
                 </>

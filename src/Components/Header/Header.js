@@ -1,5 +1,5 @@
 // Librairies
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './header.scss';
 import logo from '../../Asset/logo.png';
 import {FaChevronDown} from 'react-icons/fa';
@@ -7,17 +7,22 @@ import {GoSearch} from 'react-icons/go';
 import SearchBar from '../SearchBar/SearchBar';
 import useAxios from '../../hooks/useAxios';
 import { separator } from '../../Utils/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAppContext } from '../../App/AppContext';
 
 const Header = () => {
     const {currency,setCurrency,symbol} = useAppContext();
-    // console.log(symbol);
     const [searchBar, setSearchBar] = useState(false);
     const [displayCurrency, setDisplayCurrency] = useState("");
 
     const { response, loading } = useAxios('global');
     
+    let location = useLocation();
+    
+    useEffect(()=>{
+        setSearchBar(false);
+  },[location])
+
 
     const displayedSearchBar = () => {
         setSearchBar(!searchBar);

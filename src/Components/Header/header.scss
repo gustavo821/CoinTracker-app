@@ -8,6 +8,7 @@ header{
     #nav-brand{
         @include flex-1(row,center);
         font-size: 1.2rem;
+        font-weight: bold;
     }
 
     nav{
@@ -26,6 +27,7 @@ header{
             @include flex-1(row,center);
             cursor: pointer;
             text-transform: uppercase;
+            font-weight: bold;
         }
 
         span{
@@ -52,6 +54,7 @@ header{
                 border: 1px solid silver;
                 padding: 10px;
                 cursor: pointer;
+                font-weight: bold;
 
                 &:hover, &.active{
                     background-color: $bg-body;
@@ -103,6 +106,7 @@ header{
       .stats{
         margin-top: 25px;
         @include flex-1(row,space-between);
+        font-weight: 600;
 
         div{
             color: $color-blue-grey;

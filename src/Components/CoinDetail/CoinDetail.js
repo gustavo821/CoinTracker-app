@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './coinDetail.scss';
-import {AiOutlineStar} from 'react-icons/ai';
-import {AiFillStar} from 'react-icons/ai';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
-import bitcoin from '../../images/Bitcoin.png';
-import useAxios from '../../hooks/useAxios';
 import { reduceString, separator } from '../../Utils/utils';
 import { useAppContext } from '../../App/AppContext';
 
@@ -64,4 +60,4 @@ const CoinDetail = ({response}) => {
     );
 };
 
-export default CoinDetail;
+export default React.memo(CoinDetail);

@@ -9,6 +9,9 @@ import {
   Route,
 } from "react-router-dom";
 import GlobalContext from './AppContext';
+import Footer from '../Components/Footer/Footer';
+
+
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
           <Route path="/detail/:id" element={<Detail />}/>
   
         </Routes>
+        <Footer/>
       </IconContext.Provider>
       </BrowserRouter>
      </GlobalContext>

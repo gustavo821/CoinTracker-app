@@ -74,7 +74,7 @@ const HistoryChart = (props) => {
             }
         }
 
-    },[daily,currency])
+    },[daily,currency,id])
 
     useEffect(() => {
         setTimeout(() => {

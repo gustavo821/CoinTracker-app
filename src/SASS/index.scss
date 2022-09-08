@@ -3,6 +3,8 @@
     src: url('../Asset/NeueHaasGrotesk/NeueHaasDisplay-Mediu.ttf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 
 $color-black: #000;
@@ -16,7 +18,7 @@ $bg-body: #121222;
 $bg-header: #19182D;
 $color-dark-blue: #1C1B2D;
 $border-color: #212b37;
-$font-family:"Neue Haas Grotesk Display Pro";
+$font-family: 'Montserrat', sans-serif;
 
 @mixin flex-1 ($direction, $justify) {
   display: flex;
