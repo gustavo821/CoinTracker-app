@@ -25,13 +25,14 @@ header{
         div{
             @include flex-1(row,center);
             cursor: pointer;
+            text-transform: uppercase;
         }
 
         span{
             
             color: $color-white;
-            font-size: 18px;
-            margin-left: 5px;
+            font-size: 16px;
+            margin-left: 2px;
         }
 
         ul{
@@ -52,7 +53,7 @@ header{
                 padding: 10px;
                 cursor: pointer;
 
-                &:hover{
+                &:hover, &.active{
                     background-color: $bg-body;
 
                 }

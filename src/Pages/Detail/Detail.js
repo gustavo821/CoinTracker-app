@@ -17,7 +17,7 @@ function Detail(props) {
         <div className='detail-section'>
             <CoinDetail id={id} response={response}/>
             <HistoryChart id={id} response={response}/>
-            <Converter id={id}/>
+            <Converter response={response}/>
         </div>
     );
 }

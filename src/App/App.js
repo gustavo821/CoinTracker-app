@@ -8,19 +8,22 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import GlobalContext from './AppContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <IconContext.Provider value={{style: {verticalAlign: 'middle'}}}>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/detail/:id" element={<Detail />}/>
- 
-      </Routes>
-     </IconContext.Provider>
-     </BrowserRouter>
+    <GlobalContext>
+      <BrowserRouter>
+        <IconContext.Provider value={{style: {verticalAlign: 'middle'}}}>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/detail/:id" element={<Detail />}/>
+  
+        </Routes>
+      </IconContext.Provider>
+      </BrowserRouter>
+     </GlobalContext>
   );
 }
 
