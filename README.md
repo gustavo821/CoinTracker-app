@@ -12,10 +12,10 @@
  - [x] Convertir les cryptos en devise
  - [x] Afficher le graphique en (24h,7D,1M,2M)
  - [x] Afficher les détails de chaque crypto
- - [x] Ajout de la barre de recherche
- - [x] Proposition de réponse lors de la recherche
+ - [ ] Ajout de la barre de recherche
+ - [ ] Proposition de réponse lors de la recherche
 
-## [LIVE ICI](e-shop-chi.vercel.app/)
+## [LIVE ICI](https://kds-coin-tracker.vercel.app/)
 
 ## Technologies utilisés 
  - React
@@ -27,7 +27,7 @@
 
 1. Cloner le repo github
    ```sh
-   git clone https://github.com/Kds-JS/CoinTracker.git
+   git clone https://github.com/Kds-JS/CoinTracker-app.git
    ```
 2. Installer les dépendances
    ```sh
@@ -42,4 +42,4 @@
 
 Kds - [@twitter](https://twitter.com/kds_JS) 
 
-Lien du Projet: [https://github.com/Kds-JS/CoinTracker.git])
+Lien du Projet: [https://github.com/Kds-JS/CoinTracker-app.git])
