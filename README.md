@@ -27,7 +27,7 @@
 
 1. Cloner le repo github
    ```sh
-   git clone https://github.com/Kds-JS/CoinTracker.git
+   git clone https://github.com/Kds-JS/CoinTracker-app.git
    ```
 2. Installer les dépendances
    ```sh
@@ -42,4 +42,4 @@
 
 Kds - [@twitter](https://twitter.com/kds_JS) 
 
-Lien du Projet: [https://github.com/Kds-JS/CoinTracker.git])
+Lien du Projet: [https://github.com/Kds-JS/CoinTracker-app.git])
