@@ -1,6 +1,8 @@
 # CoinTracker
 
-[![E-shop App](./src/images/home.png)](https://twitter.com/kds_JS)
+[![crypto App](./src/Asset/home-1.png)](https://twitter.com/kds_JS)
+
+[![crypto App](./src/Asset/home-3.png)](https://twitter.com/kds_JS)
 
 ### C'est un clone de CoinMarketCap
 
