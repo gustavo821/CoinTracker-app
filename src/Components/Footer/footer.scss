@@ -40,6 +40,30 @@ footer{
             text-decoration: underline;
         }
     }
+
+    .scroll{
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        @include flex-1(row,center);
+        cursor: pointer;
+        background: white;
+        color: Black;
+        font-size: 30px;
+        opacity: 0;
+
+        &.active{
+            opacity: 1;
+        }
+
+        &:hover{
+            background: $color-blue;
+            color: white;
+        }
+    }
 }
 
 @media screen and (max-width: 640px) {

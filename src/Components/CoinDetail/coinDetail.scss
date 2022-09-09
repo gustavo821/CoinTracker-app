@@ -8,14 +8,15 @@
     .detail-item-1{
         @include flex-2(column,flex-start);
         flex-basis: 70%;
-        // background-color: red;
 
         .item_1{
             @include flex-1(row,flex-start);
-            gap: 25px;
+            gap: 20px;
 
             div{
                 font-size: 3.2rem;
+                @include flex-1(row,flex-start);
+                gap: 20px;
             }
 
             span{
@@ -95,7 +96,21 @@
 }
 
 @media screen and (max-width: 1026px) {
+    .coinDetail-section{
+        display: block;
+    }
     .detail-item-2{
         display: none!important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .item_1{
+        flex-direction: column!important;
+        align-items: flex-start!important;
+
+        div{
+            font-size: 2rem!important;
+        }
     }
 }

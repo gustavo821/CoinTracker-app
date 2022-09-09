@@ -21,8 +21,10 @@ const CoinDetail = ({response}) => {
         <div className='coinDetail-section'>
             <div className='detail-item-1'>
                 <div className='item_1'>
-                    <img src={response.image.large} alt="coinLogo" width="50px"/>
-                    <div>{response.name}</div>
+                    <div>
+                        <img src={response.image.large} alt="coinLogo" width="50px"/>
+                        <div>{response.name}</div>
+                    </div>
                     <span style={{textTransform: "uppercase"}}>{response.symbol}</span>
                 </div>
 
