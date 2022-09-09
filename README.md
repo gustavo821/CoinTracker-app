@@ -1,4 +1,4 @@
-# E-Commerce-Shop
+# CoinTracker
 
 [![E-shop App](./src/images/home.png)](https://twitter.com/kds_JS)
 
