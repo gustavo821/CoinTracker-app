@@ -15,7 +15,7 @@
  - [x] Ajout de la barre de recherche
  - [x] Proposition de réponse lors de la recherche
 
-## [LIVE ICI](e-shop-chi.vercel.app/)
+## [LIVE ICI](https://kds-coin-tracker.vercel.app/)
 
 ## Technologies utilisés 
  - React
