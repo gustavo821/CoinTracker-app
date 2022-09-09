@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './home.scss';
-import {AiFillStar} from 'react-icons/ai';
+
 
 // Componenets
 import Market from '../../Components/Market/Market';

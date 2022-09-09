@@ -1,7 +1,4 @@
 import React from 'react';
-import Header from '../Components/Header/Header';
-import Detail from '../Pages/Detail/Detail';
-import Home from '../Pages/Home/Home';
 import {IconContext} from 'react-icons'
 import {
   BrowserRouter,
@@ -9,9 +6,13 @@ import {
   Route,
 } from "react-router-dom";
 import GlobalContext from './AppContext';
+
+
+// Components
+import Header from '../Components/Header/Header';
+import Detail from '../Pages/Detail/Detail';
+import Home from '../Pages/Home/Home';
 import Footer from '../Components/Footer/Footer';
-
-
 
 function App() {
   return (

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import {AiFillFire} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
-import bitcoin from '../../images/Bitcoin.png';
+
 
 const TrendingCoin = () => {
-    const { response, loading } = useAxios(`search/trending`);
+    const { response} = useAxios(`search/trending`);
     console.log(response);
     
 

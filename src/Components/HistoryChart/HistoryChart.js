@@ -3,6 +3,9 @@ import './historyChart.scss';
 import moment from 'moment/moment';
 import axios from 'axios';
 
+// Components
+import Loader from '../Loader/Loader';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,7 +19,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { useAppContext } from '../../App/AppContext';
-import Loader from '../Loader/Loader';
 
 ChartJS.register(
   CategoryScale,
@@ -29,13 +31,13 @@ ChartJS.register(
   Legend
 );
 
+
+
 const HistoryChart = (props) => {
     const {currency} = useAppContext();
     const id = props.id;
     const detailData = props.response;
-    // console.log(detailData);
 
-    const usd = "usd";
     const [daily,setDaily] = useState(0);
     const [response,setResponse] = useState(null);
     const [filterData,setFilterData] = useState({});
@@ -50,8 +52,6 @@ const HistoryChart = (props) => {
   }
 
   
-
-    
     useEffect(() => {
 
         if (detailData){

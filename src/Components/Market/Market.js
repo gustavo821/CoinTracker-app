@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './market.scss';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
-
-
 import { currencyFormat, reduceString, separator } from '../../Utils/utils';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../App/AppContext';
 import axios from 'axios';
 
+// Components
 import Loader from '../Loader/Loader';
 
 const Market = () => {

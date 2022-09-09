@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './coinDetail.scss';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
 import { reduceString, separator } from '../../Utils/utils';
 import { useAppContext } from '../../App/AppContext';
+
+// Components
 import Loader from '../Loader/Loader';
 
 

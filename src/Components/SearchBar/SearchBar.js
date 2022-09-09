@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './searchBar.scss';
 import {GoSearch} from 'react-icons/go';
 import {AiFillCloseCircle} from 'react-icons/ai';
@@ -13,7 +13,7 @@ const SearchBar = ({displayedSearchBar}) => {
     const [trending,setTrending] = useState(true);
     const [input,setInput] = useState("");
 
-    const { response, loading } = useAxios(`search?query=${input}`);
+    const { response} = useAxios(`search?query=${input}`);
     // console.log(response);
     
 
@@ -38,7 +38,7 @@ const SearchBar = ({displayedSearchBar}) => {
     
     
     useEffect(() => {
-        if (input != "") {
+        if (input !== "") {
             setTrending(false);
         } else {
             setTrending(true);
