@@ -4,6 +4,7 @@ import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
 import { reduceString, separator } from '../../Utils/utils';
 import { useAppContext } from '../../App/AppContext';
+import Loader from '../Loader/Loader';
 
 
 const CoinDetail = ({response}) => {
@@ -11,7 +12,7 @@ const CoinDetail = ({response}) => {
 
     return (
         !response ? (
-            <div>Chargement</div>
+            <Loader height="150px"/>
         )
         :
         (

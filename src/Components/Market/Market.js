@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import { useAppContext } from '../../App/AppContext';
 import axios from 'axios';
 
+import Loader from '../Loader/Loader';
+
 const Market = () => {
     const {currency,symbol} = useAppContext();
     const [response,setResponse] = useState(null);
@@ -45,8 +47,14 @@ const Market = () => {
                     <th>CIRCULATING SUPPLY</th>
                 </thead>
 
+                { !response ? (
+                    <Loader height="400px"/>
+                )
+                :
+                (
+
                 <tbody>
-                    {response && response.map(coin => {
+                    {response.map(coin => {
                         return (
                         <tr>
                             <td>{response.indexOf(coin) + 1}</td>
@@ -96,6 +104,9 @@ const Market = () => {
                     )})}
 
                 </tbody>
+                )
+                }
+                
             </table>
         </div>
     );

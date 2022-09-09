@@ -16,6 +16,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { useAppContext } from '../../App/AppContext';
+import Loader from '../Loader/Loader';
 
 ChartJS.register(
   CategoryScale,
@@ -38,7 +39,6 @@ const HistoryChart = (props) => {
     const [daily,setDaily] = useState(0);
     const [response,setResponse] = useState(null);
     const [filterData,setFilterData] = useState({});
-    // console.log(response);
 
   const fetchData = async (param) => {
     try {
@@ -165,7 +165,7 @@ const HistoryChart = (props) => {
 
             {
                 !response ? (
-                    <div>Chargement</div>
+                    <Loader height="200px"/>
                 )
                 :
                 (

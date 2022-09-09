@@ -12,7 +12,7 @@
 
         .item_1{
             @include flex-1(row,flex-start);
-            gap: 15px;
+            gap: 25px;
 
             div{
                 font-size: 3.2rem;
