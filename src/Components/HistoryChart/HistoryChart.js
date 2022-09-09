@@ -42,28 +42,28 @@ const HistoryChart = (props) => {
     const [response,setResponse] = useState(null);
     const [filterData,setFilterData] = useState({});
 
-  const fetchData = async (param) => {
-    try {
-      const result = await axios.get(`https://api.coingecko.com/api/v3/coins/${param}`);
-      setResponse(result.data);
-    } catch(err) {
-      console.log(err);
-    } 
-  }
-
   
     useEffect(() => {
 
+        const fetchData = async (param) => {
+            try {
+              const result = await axios.get(`https://api.coingecko.com/api/v3/coins/${param}`);
+              setResponse(result.data);
+            } catch(err) {
+              console.log(err);
+            } 
+          }
+
         if (detailData){
-            if (daily == 7 ){
+            if (daily === 7 ){
                 fetchData(`${id}/market_chart?vs_currency=${currency}&days=${daily}&interval=5daily`);
 
                 setFilterData(detailData.market_data.price_change_percentage_7d_in_currency[currency]);
-            } else if (daily == 30 ) {
+            } else if (daily === 30 ) {
                 fetchData(`${id}/market_chart?vs_currency=${currency}&days=${daily}&interval=daily`);
 
                 setFilterData(detailData.market_data.price_change_percentage_30d_in_currency[currency]);
-            } else if (daily == 60 ) {
+            } else if (daily === 60 ) {
                 fetchData(`${id}/market_chart?vs_currency=${currency}&days=${daily}&interval=daily`);
 
                 setFilterData(detailData.market_data.price_change_percentage_60d_in_currency[currency]);
@@ -113,9 +113,9 @@ const HistoryChart = (props) => {
   
     const data = response && {
       labels: coinChartData.map(value => 
-        {   if (daily == 1){
+        {   if (daily === 1){
                 return moment(value.x).format('LT')
-            }else if(daily ==7 ){
+            }else if(daily === 7 ){
                 return moment(value.x).format('lll')
             }else{
                 return moment(value.x).format('ll')
@@ -138,24 +138,24 @@ const HistoryChart = (props) => {
         <div className='chart-section'>
             <div className="chart-menu">
                 <div 
-                className={daily == 1 && 'active'} onClick={() => setDaily(1)}
+                className={daily === 1 && 'active'} onClick={() => setDaily(1)}
                 >
                     1D
                 </div>
                 <div 
-                className={daily == 7 && 'active'}
+                className={daily === 7 && 'active'}
                 onClick={() => setDaily(7)}
                 >
                     7D
                 </div>
                 <div
-                className={daily == 30 && 'active'} 
+                className={daily === 30 && 'active'} 
                 onClick={() => setDaily(30)}
                 >
                     1M
                 </div>
                 <div
-                className={daily == 60 && 'active'} 
+                className={daily === 60 && 'active'} 
                 onClick={() => setDaily(60)}
                 >
                     2M

@@ -15,7 +15,7 @@ const Header = () => {
     const [searchBar, setSearchBar] = useState(false);
     const [displayCurrency, setDisplayCurrency] = useState("");
 
-    const { response, loading } = useAxios('global');
+    const { response} = useAxios('global');
     
     let location = useLocation();
     
