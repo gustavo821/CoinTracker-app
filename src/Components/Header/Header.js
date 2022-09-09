@@ -83,7 +83,7 @@ const Header = () => {
 
                     <div id="search-bar" onClick={displayedSearchBar}>
                         <GoSearch id="search-icon"/>
-                        <input type="text" id="search-input" placeholder='Search... '/>
+                        <div id="search-input">Search...</div>
                         
                     </div>
 

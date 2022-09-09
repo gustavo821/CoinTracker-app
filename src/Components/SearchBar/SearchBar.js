@@ -29,9 +29,9 @@ const SearchBar = ({displayedSearchBar}) => {
 
     useEffect(() => {
         const newArray = searchData && searchData.filter(item => 
-            item.name.toLowerCase().includes(input) || 
-            item.symbol.toLowerCase().includes(input) || 
-            item.id.toLowerCase().includes(input)
+            item.name.includes(input) || 
+            item.symbol.includes(input) || 
+            item.id.includes(input)
             ) 
             setFilteredData(newArray);
     },[searchData,input])
@@ -50,7 +50,8 @@ const SearchBar = ({displayedSearchBar}) => {
             <div className='search'>
                 <div className="search-bar">
                     <GoSearch id="search-icon"/>
-                    <input 
+                    <input
+                    autoFocus 
                     type="text" 
                     id="search-input" placeholder='Type for exemple "Bitcoin" '
                     value={input}

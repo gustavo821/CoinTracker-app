@@ -71,19 +71,20 @@ header{
         #search-input {
             line-height: 2rem;
             border-radius: 10px;
-            padding: 0.5rem 2.5rem;
+            height: 50px;
             font-size: 1rem;
+            padding-top: 7px;
+            padding-left: 40px;
+            width: 280px;
             background: black;
             border: 2px solid $bg-body;
             outline: none;
-            color: $color-white;
-            
-            &::placeholder{
-                color: $color-blue-grey;
-            }
+            color: $color-blue-grey;
+            cursor: pointer;
           }
 
           #search-icon {
+            cursor: pointer;
             position: absolute;
             left: 0;
             bottom: 8px;
