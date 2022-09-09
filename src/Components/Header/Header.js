@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './header.scss';
 import logo from '../../Asset/logo.png';
-import {FaChevronDown} from 'react-icons/fa';
+import {AiFillCaretDown} from 'react-icons/ai';
 import {GoSearch} from 'react-icons/go';
 import SearchBar from '../SearchBar/SearchBar';
 import useAxios from '../../hooks/useAxios';
@@ -61,7 +61,7 @@ const Header = () => {
                         
                         <div onClick={displayedCurrency}>
                             {currency} 
-                            <span> <FaChevronDown/> </span>
+                            <span> <AiFillCaretDown/> </span>
                         </div>
 
                         <ul className={displayCurrency}>
