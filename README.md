@@ -12,8 +12,8 @@
  - [x] Convertir les cryptos en devise
  - [x] Afficher le graphique en (24h,7D,1M,2M)
  - [x] Afficher les détails de chaque crypto
- - [x] Ajout de la barre de recherche
- - [x] Proposition de réponse lors de la recherche
+ - [ ] Ajout de la barre de recherche
+ - [ ] Proposition de réponse lors de la recherche
 
 ## [LIVE ICI](https://kds-coin-tracker.vercel.app/)
 
