@@ -8,7 +8,7 @@
 #### Le site est responsive
 
 ## Tâches
- - [x] Afficher le top 100 cryptomonnaies par marketcap
+ - [x] Afficher le top 100 des cryptomonnaies par marketcap
  - [x] Modifier la devise par défaut (USD,EUR)
  - [x] Convertir les cryptos en devise (USD,EUR)
  - [x] Afficher le graphique en (24h,7D,1M,2M)
