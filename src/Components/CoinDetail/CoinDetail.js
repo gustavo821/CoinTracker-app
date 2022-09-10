@@ -40,8 +40,8 @@ const CoinDetail = ({response}) => {
                 </div>
 
                 <div className='item_4'>
-                    <div><span>Low:</span>{symbol}{response.market_data.high_24h[currency]}</div>
-                    <div><span>High:</span>{symbol}{response.market_data.low_24h[currency]}</div>
+                    <div><span>Low:</span>{symbol}{response.market_data.low_24h[currency]}</div>
+                    <div><span>High:</span>{symbol}{response.market_data.high_24h[currency]}</div>
                 </div>
             </div>
 
