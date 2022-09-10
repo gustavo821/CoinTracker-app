@@ -6,7 +6,7 @@ import useAxios from '../../hooks/useAxios';
 
 const TrendingCoin = () => {
     const { response} = useAxios(`search/trending`);
-    console.log(response);
+    // console.log(response);
     
 
     const [trending,setTrending] = useState([]);
@@ -17,7 +17,7 @@ const TrendingCoin = () => {
         }
     },[response]);
 
-    console.log(trending);
+    // console.log(trending);
 
     return (
         <>

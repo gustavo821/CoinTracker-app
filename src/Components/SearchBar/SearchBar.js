@@ -52,7 +52,6 @@ const SearchBar = ({displayedSearchBar}) => {
                     <GoSearch id="search-icon"/>
                     <input
                     autoFocus
-                    disabled 
                     type="text" 
                     id="search-input" placeholder='Type for exemple "Bitcoin" '
                     value={input}
