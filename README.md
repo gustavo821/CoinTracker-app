@@ -5,15 +5,16 @@
 [![crypto App](./src/Asset/home-3.png)](https://twitter.com/kds_JS)
 
 ### C'est un clone de CoinMarketCap
+#### Le site est responsive
 
 ## Tâches
- - [x] Afficher les top 100 cryptomonnaies par marketcap
+ - [x] Afficher le top 100 des cryptomonnaies par marketcap
  - [x] Modifier la devise par défaut (USD,EUR)
- - [x] Convertir les cryptos en devise
+ - [x] Convertir les cryptos en devise (USD,EUR)
  - [x] Afficher le graphique en (24h,7D,1M,2M)
  - [x] Afficher les détails de chaque crypto
- - [ ] Ajout de la barre de recherche
- - [ ] Proposition de réponse lors de la recherche
+ - [x] Ajout de la barre de recherche
+ - [x] Proposition de réponse lors de la recherche
 
 ## [LIVE ICI](https://kds-coin-tracker.vercel.app/)
 
