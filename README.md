@@ -5,6 +5,7 @@
 [![crypto App](./src/Asset/home-3.png)](https://twitter.com/kds_JS)
 
 ### C'est un clone de CoinMarketCap
+#### Le site est responsive
 
 ## Tâches
  - [x] Afficher les top 100 cryptomonnaies par marketcap
