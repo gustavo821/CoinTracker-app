@@ -32,9 +32,9 @@ const CoinDetail = ({response}) => {
 
                 <div className='item_3'>
                     <div id='price'>{symbol}{response.market_data.current_price[currency]}</div>
-                    <div className={response.market_data.market_cap_change_percentage_24h_in_currency[currency] < 0 ? 'change down' : 'change'}> 
-                    <span> {response.market_data.market_cap_change_percentage_24h_in_currency[currency] < 0 ? <AiFillCaretDown/> : <AiFillCaretUp/> } </span> 
-                    {reduceString(response.market_data.market_cap_change_percentage_24h_in_currency[currency])}%
+                    <div className={response.market_data.price_change_percentage_24h_in_currency[currency] < 0 ? 'change down' : 'change'}> 
+                    <span> {response.market_data.price_change_percentage_24h_in_currency[currency] < 0 ? <AiFillCaretDown/> : <AiFillCaretUp/> } </span> 
+                    {reduceString(response.market_data.price_change_percentage_24h_in_currency[currency])}%
                     </div>
                     <span>24h</span>
                 </div>
