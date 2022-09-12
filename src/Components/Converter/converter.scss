@@ -3,7 +3,9 @@
 .converter-section{
     margin: 50px 0 100px 0;
     width: 500px;
-    background: $bg-header;
+    @include themed() {
+        background: t('div');
+    }
     padding: 25px;
 
     span{
@@ -17,7 +19,10 @@
     #item_1, #item_2{
         @include flex-1(row,flex-start);
         margin-top: 10px;
-        background: $bg-body;
+        @include themed() {
+            background: t('bg-body');
+            color: t('text');
+        }
         
         padding: 0;
 
@@ -33,9 +38,11 @@
         input{
             height: 60px;
             flex-basis: 80%;
-            background: $bg-body;
+            @include themed() {
+                background: t('bg-body');
+                color: t('text');
+            }
             outline: none;
-            color: white;
             border: none;
             padding: 0 15px;
             font-size: 1rem;

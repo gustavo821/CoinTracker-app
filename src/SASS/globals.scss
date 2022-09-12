@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+@import './theme';
 
 
-$color-black: #000;
-$color-white: #FFFFFF;
-$color-green: #37C16F;
-$color-red: #B34E55;
-$color-yellow: #ECC943;
-$color-blue: #558ED7;
-$color-blue-grey: #575472;
-$bg-body: #121222;
-$bg-header: #19182D;
-$color-dark-blue: #1C1B2D;
-$border-color: #212b37;
 $font-family: 'Montserrat', sans-serif;
 
 @mixin flex-1 ($direction, $justify) {
@@ -39,9 +29,19 @@ $font-family: 'Montserrat', sans-serif;
     font-family: $font-family;
 }
 
-body{
-  background: $bg-body;
-  color: $color-white;
+
+#theme{
+
+    &.theme--dark{
+      background: $bg-body;
+      color: $color-white;
+    }
+
+    &.theme--light{
+      background: $color-white;
+      color: $color-black;
+    }
+  
 }
 
 

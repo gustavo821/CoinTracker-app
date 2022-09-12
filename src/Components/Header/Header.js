@@ -2,8 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import './header.scss';
 import logo from '../../Asset/logo.png';
+import logoDark from '../../Asset/logo-dark.png';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {GoSearch} from 'react-icons/go';
+import {ImSun} from 'react-icons/im';
+import {HiMoon} from 'react-icons/hi';
 import SearchBar from '../SearchBar/SearchBar';
 import useAxios from '../../hooks/useAxios';
 import { separator } from '../../Utils/utils';
@@ -11,7 +14,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAppContext } from '../../App/AppContext';
 
 const Header = () => {
-    const {currency,setCurrency,symbol} = useAppContext();
+    const {currency,setCurrency,symbol,isDark,toggleDark} = useAppContext();
     const [searchBar, setSearchBar] = useState(false);
     const [displayCurrency, setDisplayCurrency] = useState("");
 
@@ -49,12 +52,20 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <Link to="/" id='nav-brand'><img src={logo} alt="logo" width="50px"/> CoinMarketCap</Link>
+                <Link to="/" id='nav-brand'><img src={isDark ? logo : logoDark} alt="logo" width={isDark ? "60px" : "45px"}/> CoinMarketCap</Link>
 
                 <div className='nav-item'>
 
                     <div id='search-mobile' onClick={displayedSearchBar}>
                         <GoSearch id="search-icon"/>
+                    </div>
+
+                    <div
+                    id='mode-icon'
+                    onClick={() => toggleDark()} 
+                    style={{cursor: 'pointer'}}
+                    >
+                        {isDark ? <ImSun/> : <HiMoon/>}
                     </div>      
 
                     <div className='currency'>

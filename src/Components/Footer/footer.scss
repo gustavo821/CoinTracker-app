@@ -1,19 +1,20 @@
 @import '../../SASS/globals.scss';
 
 footer{
-    // background: $color-black;
-    border-top: 1px solid $color-blue-grey;
+    border-top: 1px solid $color-grey;
     display: flex;
     justify-content: space-between;
     margin: 0 5%;
     padding: 40px 0;
     padding-right: 50px;
 
+
     #footer-item-1{
        a{
         @include flex-1(row,flex-start);
-        font-size: 25px;
+        font-size: 30px;
         font-weight: bold;
+        text-decoration: none!important;
        }
     }
 
@@ -42,6 +43,10 @@ footer{
     }
 
     .scroll{
+        @include themed() {
+            background-color: t('bg-white');
+            color: t('bg-black');
+        }
         position: fixed;
         bottom: 50px;
         right: 50px;
@@ -50,8 +55,6 @@ footer{
         border-radius: 50%;
         @include flex-1(row,center);
         cursor: pointer;
-        background: white;
-        color: Black;
         font-size: 30px;
         opacity: 0;
 

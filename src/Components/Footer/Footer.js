@@ -1,11 +1,14 @@
 import React, {useState,useEffect} from 'react';
 import './footer.scss';
 import logo from '../../Asset/logo.png';
+import logoDark from '../../Asset/logo-dark.png';
 import { Link } from 'react-router-dom';
 import {BiArrowToTop} from 'react-icons/bi';
+import { useAppContext } from '../../App/AppContext';
 
 const Footer = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const {isDark} = useAppContext();
 
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -34,10 +37,7 @@ const Footer = () => {
     return (
         <footer>
             <div id='footer-item-1'>
-             <Link to="/" id='nav-brand'>
-                <img src={logo} alt="logo" width="50px"/>
-                CoinMarketCap
-            </Link>
+              <Link to="/" id='nav-brand'><img src={isDark ? logo : logoDark} alt="logo" width={isDark ? "60px" : "45px"}/> CoinMarketCap</Link>
             </div>
 
             <div id='footer-item-2'>

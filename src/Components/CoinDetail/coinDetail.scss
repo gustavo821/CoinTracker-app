@@ -4,6 +4,12 @@
     margin-top: 50px;
     @include flex-1(row,flex-start);
 
+    span{
+        @include themed() {
+            background-color: t('div');
+            color: t('bg-span');
+        }
+    }
 
     .detail-item-1{
         @include flex-2(column,flex-start);
@@ -20,8 +26,6 @@
             }
 
             span{
-                background: $bg-header;
-                color: $color-blue-grey;
                 padding: 5px 8px;
             }
         }
@@ -43,6 +47,7 @@
 
             .change{
                 background: $color-green;
+                color: $color-white;
                 padding: 8px 15px;
                 border-radius: 5px;
 
@@ -59,8 +64,6 @@
             }
 
             span{
-                background: $bg-header;
-                color: $color-blue-grey;
                 padding: 5px 8px;
             }
         }
@@ -70,7 +73,10 @@
             gap: 25px;
 
             span{
-                color: $color-blue-grey;
+                background: none;
+                @include themed() {
+                    color: t('span');
+                }
             }
         }
 
@@ -84,12 +90,22 @@
 
         
         div{
-            color: white;
+            @include themed() {
+                color: t('text');
+            }
             margin-bottom: 10px;
 
             &:nth-child(1){
-                color: $color-blue-grey;
-                // margin: 15px 0;
+                @include themed() {
+                    color: t('span');
+                }
+            }
+
+            span{
+                background: none;
+                @include themed() {
+                    color: t('text');
+                }
             }
         }
     }

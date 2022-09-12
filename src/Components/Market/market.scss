@@ -9,9 +9,13 @@
 
         thead{
             height: 50px;
-            border-top: 1px solid $border-color;
-            border-bottom: 1px solid $border-color;
-            color: $color-blue-grey;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            @include themed() {
+                border-color: t('border-color');
+                color: t('bg-span')
+            }
+            
             position: sticky;
             top: 0;
             z-index: 1;
@@ -19,7 +23,9 @@
 
             th{
                 text-align: right;
-                background: $bg-body;
+                @include themed() {
+                    background: t('bg-body');
+                  }
 
                 &:nth-child(1){
                     text-align: center;
@@ -68,19 +74,29 @@
         tbody{
             
             tr{
-                border-bottom: 1px solid #212b37;
+                border-bottom: 1px solid;
+                @include themed() {
+                    border-color: t('border-color');
+                }
+                
                 height: 80px;
                 
                 &:hover{
 
                     td{
-                        background: rgb(41, 39, 39)!important;
+                        @include themed() {
+                            background-color: t('div-hover');
+                        }
                     }
                 }
                 
                 
                 td{
-                    background: $bg-body;
+                    // background: $bg-body;
+                    @include themed() {
+                        background: t('bg-body');
+                        color: t('color');
+                      }
                     text-align: right;
 
                     &#colorBlue{
@@ -110,7 +126,9 @@
 
                             span{
                                 margin-top: 2px;
-                                color: $color-blue-grey;
+                                @include themed() {
+                                    color: t('span')
+                                }
                             }
                         }
                     }

@@ -1,0 +1,71 @@
+$color-black: #000;
+$color-white: #FFFFFF;
+$color-green: #37C16F;
+$color-red: #B34E55;
+$color-yellow: #ECC943;
+$color-blue: #3485E5;
+$color-blue-grey: #575472;
+$bg-body: #121222;
+$bg-header: #19182D;
+$color-dark-blue: #1C1B2D;
+$border-color: #212b37;
+$hover-light: #EAEDF0;
+$hover-dark: #323546;
+$bg-header-light: #FFFFFF;
+$color-span: #808A9D;
+$color-grey: #7A667E;
+
+
+// Thème
+
+
+$themes: (
+        light: (
+                bg-header: $bg-header-light,
+                text: $color-black,
+                span: $color-span,
+                bg-body: $color-white,
+                div-hover: $hover-light,
+                li-hover: $color-blue,
+                div: $hover-light,
+                bg-span: $color-grey,
+                bg-white: $color-black,
+                bg-black: $color-white,
+                border-color: $hover-light,
+                search-color: $hover-light
+        ),
+        dark: (
+                bg-header: $bg-header,
+                text: $color-white,
+                span: $color-blue-grey,
+                bg-body: $bg-body,
+                div-hover: $hover-dark,
+                li-hover: $color-blue-grey,
+                div: $bg-header,
+                bg-span: $color-blue-grey,
+                bg-white: $color-white,
+                bg-black: $color-black,
+                border-color: $border-color,
+                search-color: $color-black
+        ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+// Thème

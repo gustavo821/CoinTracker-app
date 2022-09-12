@@ -10,6 +10,12 @@
         gap: 25px;
         background-color: $bg-header;
         color: $color-blue-grey;
+
+        @include themed() {
+            background-color: t('div');
+            color: t('bg-span');
+        }
+
         padding: 3px;
         width: max-content;
 
@@ -19,7 +25,9 @@
             border-radius: 5px;
 
             &:hover, &.active{
-                background: $bg-body;
+                @include themed() {
+                    background-color: t('bg-body');
+                }
             }
         }
     }

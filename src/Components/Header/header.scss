@@ -1,13 +1,23 @@
 @import '../../SASS/globals.scss';
 
 header{
-    background-color: $bg-header;
+    @include themed() {
+        color: t('text');
+        background: t('bg-header');
+    }
+
+    #mode-icon{
+        font-size: 25px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+    }
+
     height: auto;
     padding: 20px 5%;
 
     #nav-brand{
         @include flex-1(row,center);
-        font-size: 1.2rem;
+        font-size: 30px;
         font-weight: bold;
     }
 
@@ -31,15 +41,11 @@ header{
         }
 
         span{
-            
-            color: $color-white;
             font-size: 16px;
             margin-left: 2px;
         }
 
         ul{
-            
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
             position: absolute;
             top: 40px;
             z-index: 1;
@@ -50,14 +56,18 @@ header{
             }
 
             li{
-                background: $color-blue-grey;
+                @include themed() {
+                    background: t('bg-body');
+                }
                 border: 1px solid silver;
                 padding: 10px;
                 cursor: pointer;
                 font-weight: bold;
 
                 &:hover, &.active{
-                    background-color: $bg-body;
+                    @include themed() {
+                        background: t('div-hover');
+                    }
 
                 }
             }
@@ -76,10 +86,13 @@ header{
             padding-top: 7px;
             padding-left: 40px;
             width: 280px;
-            background: black;
-            border: 2px solid $bg-body;
+            @include themed() {
+                background: t('search-color');
+                border-color: t('search-color');
+                color: t('span')
+            }
+            border: 2px solid;
             outline: none;
-            color: $color-blue-grey;
             cursor: pointer;
           }
 
@@ -96,7 +109,6 @@ header{
       }
 
       #search-mobile{
-        color: $color-white;
         padding: 8px 15px;
         font-size: 1.2rem;
         display: none;
@@ -110,7 +122,9 @@ header{
         font-weight: 600;
 
         div{
-            color: $color-blue-grey;
+            @include themed() {
+                color: t('span');
+            }
             span{
                 color: $color-blue;
                 
@@ -125,7 +139,11 @@ header{
 @media screen and (max-width: 992px) {
 
     header{
-        padding: 20px 5%;
+        padding: 20px 3%;
+    }
+
+    #nav-brand{
+        font-size: 25px!important;
     }
 
     .stats{
@@ -140,6 +158,10 @@ header{
 @media screen and (max-width: 640px) {
     header{
         padding: 20px 3%;
+    }
+
+    #nav-brand{
+        font-size: 20px!important;
     }
 
     .nav-item{
