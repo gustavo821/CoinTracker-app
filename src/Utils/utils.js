@@ -1,9 +1,9 @@
 
 export function reduceString(coin){
     if (coin < 0) {
-       return (coin).toFixed(2).substr(1);
+       return Number(coin).toFixed(2).substr(1);
     } else {
-        return (coin).toFixed(2);
+        return Number(coin).toFixed(2);
     }
 }
 
