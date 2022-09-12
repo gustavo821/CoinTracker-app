@@ -32,7 +32,7 @@ const Header = () => {
     }
 
     const displayedCurrency = () => {
-        if(displayCurrency == ""){
+        if(displayCurrency === ""){
             setDisplayCurrency("active");
         } else {
             setDisplayCurrency("");
