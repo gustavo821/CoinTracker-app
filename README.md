@@ -15,6 +15,7 @@
  - [x] Afficher les détails de chaque crypto
  - [x] Ajout de la barre de recherche
  - [x] Proposition de réponse lors de la recherche
+ - [x] Ajout du dark/light mode
 
 ## [LIVE ICI](https://kds-coin-tracker.vercel.app/)
 
