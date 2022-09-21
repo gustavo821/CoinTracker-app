@@ -27,8 +27,8 @@ const TrendingCoin = () => {
 
                 {trending && trending.map(item => {
                     return(
-                        <Link to={`detail/${item.item.id}`}>
-                            <div key={item.item.id}>
+                        <Link to={`detail/${item.item.id}`} key={item.item.id}>
+                            <div >
                                 <div>
                                     <img src={item.item.large} alt="logo" width="20px"/>
                                     <div>{item.item.name}</div>

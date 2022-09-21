@@ -54,7 +54,7 @@ const Market = () => {
                 <tbody>
                     {response.map(coin => {
                         return (
-                        <tr>
+                        <tr key={coin.id}>
                             <td>{response.indexOf(coin) + 1}</td>
                             <td>
                                 <Link to={`detail/${coin.id}`}>

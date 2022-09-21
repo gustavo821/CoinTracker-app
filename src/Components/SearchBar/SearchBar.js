@@ -14,12 +14,15 @@ const SearchBar = ({displayedSearchBar}) => {
     const [input,setInput] = useState("");
 
     const { response} = useAxios(`search?query=${input}`);
-    // console.log(response);
+    
     
 
     const [searchData,setSearchData] = useState([]);
     const [filteredData,setFilteredData] = useState([]);
+
+    // console.log(response);
     // console.log(searchData);
+    console.log(filteredData);
 
     useEffect(() => {
         if(response){
@@ -75,8 +78,8 @@ const SearchBar = ({displayedSearchBar}) => {
 
                 {filteredData && filteredData.map(item => {
                     return(
-                        <Link to={`detail/${item.id}`}>
-                            <div key={item.id}>
+                        <Link to={`detail/${item.id}`} key={item.id}>
+                            <div >
                                 <div>
                                     <img src={item.large} alt="logo" width="20px"/>
                                     <div>{item.name}</div>
