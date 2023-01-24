@@ -176,3 +176,9 @@ header{
         display: block!important;
     }
 }
+
+@media screen and (max-width: 500px) {
+    #brand{
+        display: none;
+    }
+}

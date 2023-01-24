@@ -52,7 +52,7 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <Link to="/" id='nav-brand'><img src={isDark ? logo : logoDark} alt="logo" width={isDark ? "60px" : "45px"}/> CoinMarketCap</Link>
+                <Link to="/" id='nav-brand'><img src={isDark ? logo : logoDark} alt="logo" width={isDark ? "60px" : "45px"}/> <span id="brand">CoinMarketCap</span></Link>
 
                 <div className='nav-item'>
 
